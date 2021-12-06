@@ -7,7 +7,7 @@
 
         <div class="mt-32">
             <div>
-                <a href="" class="block bg-blue-500 font-bold text-white p-3 rounded w-full">Log in</a>
+                <a href="{{route('login')}}" class="block bg-blue-500 font-bold text-white p-3 rounded w-full">Log in</a>
             </div>
             <div>
                 <a href="{{route('register')}}" class="block border-2 border-blue-500 bg-white font-bold text-blue-500 p-3 rounded w-full mt-4">Register</a>

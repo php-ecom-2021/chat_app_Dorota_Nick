@@ -7,8 +7,12 @@
 
         <div class="mt-16">
             <h2 class="font-bold text-4xl mb-8">Register</h2>
-
-            <form method="post" action="{{route('register')}}" enctype=”multipart/form-data”>
+            @if(session('status'))
+            <div class="bg-red-500 p-4 rounded-lg mb-4 text-white text-center font-bold">
+                {{session('status')}}
+            </div>
+            @endif
+            <form method="post" action="{{route('register')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4">
                     <div class="flex justify-between items-center">
@@ -28,7 +32,7 @@
                                 </svg>
                             </div>
                             Avatar
-                            <input type="file" name="avatar" id="avatar" class="hidden" accept="image/*" value="{{old('avatar')}}">
+                            <input type="file" name="avatar" id="avatar" class="hidden" accept="image/*">
                         </label>
                     </div>
                     @error('name')
@@ -102,7 +106,7 @@
                 </div>
             </form>
 
-            <p class="text-center">Already have an account? <a class="text-blue-500" href="">Log in</a></p>
+            <p class="text-center">Already have an account? <a class="text-blue-500" href="{{route('login')}}">Log in</a></p>
         </div>
     </div>
 </div>
