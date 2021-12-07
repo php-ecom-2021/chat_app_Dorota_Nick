@@ -46,7 +46,7 @@ class RegisterController extends Controller
             #move it to the public/images
             $request->avatar->move(public_path('images'), $newAvatarName);
         } else {
-            $newAvatarName = $request->avatar;
+            $newAvatarName = null;
         }
         
         //store the user
@@ -56,8 +56,6 @@ class RegisterController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
-        $newAvatarName = null;
         
         //sign in
         #if signed in, get the user model

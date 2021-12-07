@@ -28,14 +28,14 @@
                 </button>
             </form>
         </div>
-        <div class="w-full p-4 drop-shadow">
+        <div class="w-full p-4">
             <form action="" method="get">
                 <label for="search" class="sr-only">Search users</label>
                 <input class="w-full rounded-full px-4 py-2" type="search" name="search" id="search" placeholder="Search user...">
             </form>
         </div>
         <div class="w-full">
-
+            
         </div>
     </div>
     <div>
