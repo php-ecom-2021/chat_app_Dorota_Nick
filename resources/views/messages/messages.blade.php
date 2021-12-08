@@ -29,17 +29,18 @@
             </form>
         </div>
         <div class="w-full p-4">
-            <form action="" method="get">
+            <form action="{{route('search')}}" method="get" name="search">
+                @csrf
                 <label for="search" class="sr-only">Search users</label>
-                <input class="w-full rounded-full px-4 py-2" type="search" name="search" id="search" placeholder="Search user...">
+                <input autocomplete="off" class="w-full rounded-full px-4 py-2" type="search" name="search" id="search" placeholder="Search user...">
             </form>
         </div>
-        <div class="w-full">
+        <div class="w-full" id="output">
             
         </div>
     </div>
-    <div>
-
+    <div class="w-10/12">
+        @yield('chat')
     </div>
 </div>
 @endsection

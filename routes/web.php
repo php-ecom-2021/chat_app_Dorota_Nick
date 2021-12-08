@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,6 @@ Route::post('/logout', [LogoutController::class, 'store'])
 
 Route::get('/messages', [MessagesController::class, 'index'])
 ->name('messages');
+
+Route::get('/search/{name?}', [SearchController::class, 'search'])
+->name('search');
