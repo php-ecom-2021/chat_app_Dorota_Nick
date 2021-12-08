@@ -4,7 +4,7 @@ const searchForm = document.forms.search;
 const output = document.querySelector('#output');
 
 searchForm.addEventListener('submit', (e)=>e.preventDefault())
-search.addEventListener('focus', searchUsers)
+//search.addEventListener('focus', searchUsers) /*Uncomment this line to get all users as a result when search field is targeted*/
 search.addEventListener('keyup', searchUsers)
 
 function searchUsers(){
