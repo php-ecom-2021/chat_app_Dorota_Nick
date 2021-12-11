@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Chat;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MessagesController extends Controller
 {
@@ -13,11 +14,13 @@ class MessagesController extends Controller
     }
 
     public function index(){
-        return view('messages.messages');
+        $users = User::where('id', '!=', auth()->user()->id)->get();
+
+        return view('messages.messages', ['users' => $users]);
     }
 
     public function show(Request $request){
-        
+
     }
 }
 

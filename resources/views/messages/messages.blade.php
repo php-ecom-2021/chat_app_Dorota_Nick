@@ -52,6 +52,22 @@
             </form>
         </div>
         <div class="w-full" id="output">
+            <ul>
+            @foreach($users as $user)
+                <li>
+                    <a class="flex p-4 user-item" href="javascript:void(0)">
+                        @if($user->avatar)
+                        <img class="w-16 h-16 rounded-full mr-4" src="{{asset('images/'.$user->avatar)}}"/>
+                        @else
+                        <img class="w-16 h-16 rounded-full mr-4" src="{{asset('images/default_avatar.jpg')}}"/>
+                        @endif
+                        <div>
+                            <h2 class="text-xl font-bold pb-2">{{$user->name}}</h2>
+                        </div>
+                    </a>
+                </li>
+            @endforeach  
+            </ul>
             
         </div>
     </div>
