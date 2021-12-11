@@ -17,7 +17,7 @@ function searchUsers(){
                 output.innerHTML = '';
                 for(d of data){
                     output.innerHTML += `
-                    <a class="flex p-4" href="/messages/${d.id}">
+                    <a class="flex p-4 user-item" href="messages/${d.id}">
                         <img class="w-16 h-16 rounded-full mr-4" src="images/${d.avatar ? d.avatar : 'default_avatar.jpg'}"/>
                         <div>
                             <h2 class="text-xl font-bold pb-2">${d.name}</h2>
@@ -29,4 +29,5 @@ function searchUsers(){
         )
         .catch(err => console.log(err))
     }, 1000);
+    //messages/${d.id}
 }

@@ -17,6 +17,6 @@
     </style>
 </head>
 <body class="w-full h-screen bg-gray-100">
-    @yield('content')
+    
 </body>
 </html>

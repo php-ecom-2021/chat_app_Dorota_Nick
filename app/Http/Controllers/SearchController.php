@@ -9,7 +9,8 @@ class SearchController extends Controller
 {
     public function search(Request $request){
         if($request->name){
-            $users = User::where('name', 'LIKE', '%'.$request->name.'%')->get();
+            $users = User::where([['name', 'LIKE', '%'.$request->name.'%']])->get();
+            # add [id <> auth->user->id] if we dont want to get the current user as well
         } else {
             $users = User::all();
         }
